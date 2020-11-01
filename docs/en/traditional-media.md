@@ -162,6 +162,7 @@ This route adds the missing photo and Link element. (Offical RSS doesn't have Li
 See the [official RSS page](https://www.scmp.com/rss) to get the ID of each category. This route provides fulltext that the offical feed doesn't.
 
 </RouteEn>
+
 ## The Economist
 
 ### Category
@@ -171,6 +172,14 @@ See the [official RSS page](https://www.scmp.com/rss) to get the ID of each cate
 ### GRE Vocabulary
 
 <RouteEn author="xyqfer" example="/the-economist/gre-vocabulary" path="/the-economist/gre-vocabulary" />
+
+### Download
+
+<RouteEn author="nczitzk" example="/the-economist/download" path="/the-economist/download" >
+
+The download site: http://www.cgx02.xyz/index.php?dir=/te
+
+</RouteEn>
 
 ## The Guardian
 
@@ -199,6 +208,16 @@ Provides a better reading experience (full text articles) over the official one.
 | (空)               | dual            | en      | dual-traditionalchinese               | traditionalchinese  |
 
 </RouteEn>
+
+## The Wall Street Journal (WSJ)
+
+### News
+
+<Route author="oppilate" example="/wsj/en-us/opinion" path="/wsj/:lang/:category" :paramsDesc="['Language, `en-us` only for now', 'Category, see [RSS feeds in WSJ.com](https://www.wsj.com/news/rss-news-and-feeds)']">
+
+Provide full article RSS for WSJ topics.
+
+</Route>
 
 ## Yahoo
 
