@@ -537,6 +537,20 @@ Supported sub-sites:
 
 <Route author="nwindz" example="/hinatazaka46/blog" path="/hinatazaka46/blog" />
 
+## 報導者
+
+### 最新
+
+<Route author="emdoe" example="/twreporter/newest" path="/twreporter/newest"/>
+
+### 摄影
+
+<Route author="emdoe" example="/twreporter/photography" path="/twreporter/photography"/>
+
+### 分类
+
+<Route author="emdoe" example="/twreporter/category/reviews" path="/twreporter/category/:tid" :paramsDesc="['分类（议题）名称，于主页获取']"/>
+
 ## 本地宝
 
 ### 焦点资讯
@@ -761,9 +775,21 @@ others = 热点新闻 + 滚动新闻
 
 </Route>
 
-### 观察者风闻话题
+### 风闻话题
 
-<Route author="occupy5" example="/guancha/topic/113" path="/guancha/topic/:id" :paramsDesc="['话题id， 可在URL中找到']" />
+<Route author="occupy5 nczitzk" example="/guancha/topic/110/1" path="/guancha/topic/:id?/:order?" :paramsDesc="['话题 id，可在URL中找到，默认为全部，即为 `0`', '排序参数，见下表']">
+
+| 最新回复 | 最新发布 | 24 小时最热 | 3 天最热 | 7 天最热 | 3 个月最热 | 专栏文章 |
+| -------- | -------- | ----------- | -------- | -------- | ---------- | -------- |
+| 1        | 2        | 3           | 6        | 7        | 8          | 5        |
+
+::: tip 提示
+
+仅在话题 id 为 0，即选择 全部 时，**3 个月最热**、**24 小时最热**、**3 天最热**、**7 天最热** 和 **专栏文章** 参数生效。
+
+:::
+
+</Route>
 
 ### 个人主页文章
 
@@ -954,6 +980,18 @@ column 为 third 时可选的 category:
 ### 首页
 
 <Route author="nczitzk" example="/kuaibao" path="/kuaibao/index"/>
+
+## 科技島讀
+
+### 分類
+
+<Route author="nczitzk" example="/daodu" path="/daodu/:caty?" :paramsDesc="['分類，默認為全部']">
+
+| 全部 | 文章    | Podcast |
+| ---- | ------- | ------- |
+| all  | article | podcast |
+
+</Route>
 
 ## 快科技（原驱动之家）
 
@@ -1414,6 +1452,10 @@ column 为 third 时可选的 category:
 ### 公众号 (外接大脑来源)
 
 <Route author="BugWriter2" example="/wechat/wjdn/5d5e683c82339df472988f59" path="/wechat/wjdn/:id" :paramsDesc="['公众号 id, 打开公众号页, 在 URL 中找到 id']"/>
+
+### 公众号 (wxnmh.com 来源)
+
+<Route author="laampui" example="/wechat/wxnmh/51798" path="/wechat/wxnmh/:id" :paramsDesc="['公众号 id, 打开 wxnmh.com, 在 URL 中找到 id']"/>
 
 ### 公众号栏目 (非推送 & 历史消息)
 
