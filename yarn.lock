@@ -4196,10 +4196,10 @@ date-now@^0.1.4:
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   integrity sha1-6vQ5/U1ISK105cx9vvIAZyueNFs=
 
-dayjs@1.9.4, dayjs@^1.8.29:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.4.tgz#fcde984e227f4296f04e7b05720adad2e1071f1b"
-  integrity sha512-ABSF3alrldf7nM9sQ2U+Ln67NRwmzlLOqG7kK03kck0mw3wlSSEKv/XhKGGxUjQcS57QeiCyNdrFgtj9nWlrng==
+dayjs@1.9.5, dayjs@^1.8.29:
+  version "1.9.5"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.5.tgz#fd49994ebe71639d2ce9575e97186642dfce9808"
+  integrity sha512-WULIw7UpW/E0y6VywewpbXAMH3d5cZijEhoHLwM+OMVbk/NtchKS/W+57H/0P1rqU7gHrAArjiRLHCUhgMQl6w==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -5875,10 +5875,10 @@ googleapis-common@^4.4.1:
     url-template "^2.0.8"
     uuid "^8.0.0"
 
-googleapis@63.0.0:
-  version "63.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-63.0.0.tgz#ff48d7d8966162b59e303f3f9b6e2245555bb1d3"
-  integrity sha512-wixBalZFz9qLFJqKcEaKRAKuWAf20qw35/vVN/0ogfhIMlGuDUNE3groAPdaqAmaE3sTLSEe8+XRNIx3lxOhcQ==
+googleapis@64.0.0:
+  version "64.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-64.0.0.tgz#af40364d27f2245049aaa2506847148d1815c61c"
+  integrity sha512-o8m4aRVv/LdvTVMgH4tLNeQvJZrXaa+62L9wPaKg6nHlCN3dBCKWWQKOklCwtg18xpWY4/vdNuTPHb/9Lnd00A==
   dependencies:
     google-auth-library "^6.0.0"
     googleapis-common "^4.4.1"
