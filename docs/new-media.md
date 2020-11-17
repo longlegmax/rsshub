@@ -631,6 +631,28 @@ Supported sub-sites:
 
 <Route author="LogicJake" example="/cyzone/label/创业邦周报" path="/cyzone/label/:name" :paramsDesc="['标签名称']"/>
 
+## 得到
+
+### 首页
+
+<Route author="nczitzk" example="/dedao/list/年度日更" path="/dedao/list/:caty?" :paramsDesc="['分类名，默认为年度日更']"/>
+
+### 新闻
+
+<Route author="nczitzk" example="/dedao/news" path="/dedao/news"/>
+
+### 人物故事
+
+<Route author="nczitzk" example="/dedao/figure" path="/dedao/figure"/>
+
+### 视频
+
+<Route author="nczitzk" example="/dedao/video" path="/dedao/video"/>
+
+### 知识城邦
+
+<Route author="nczitzk" example="/dedao/knowledge" path="/dedao/knowledge/:topic?/:type?" :paramsDesc="['话题 id，可在话题页 URL 中找到', '分享类型，`true` 指精选，`false` 指最新，默认为精选']"/>
+
 ## 电商报
 
 ### 分区
@@ -755,6 +777,10 @@ area 分区选项
 
 ## 观察者网
 
+### 头条
+
+<Route author="nczitzk" example="/guancha/headline" path="/guancha/headline" />
+
 ### 首页
 
 <Route author="nczitzk Jeason0228" example="/guancha" path="/guancha/:caty?" :paramsDesc="['分类，见下表，默认为全部']">
@@ -772,6 +798,16 @@ others = 热点新闻 + 滚动新闻
 观察者网首页左中右的三个 column 分别对应 **评论 & 研究**、**要闻**、**风闻** 三个部分。
 
 :::
+
+</Route>
+
+### 观学院
+
+<Route author="nczitzk" example="/guancha/member/recommend" path="/guancha/member/:caty?" :paramsDesc="['分类，见下表']">
+
+| 精选      | 观书堂 | 在线课  | 观学院   |
+| --------- | ------ | ------- | -------- |
+| recommend | books  | courses | huodongs |
 
 </Route>
 
@@ -903,6 +939,12 @@ others = 热点新闻 + 滚动新闻
 
 </Route>
 
+## 贾真的电商 108 将
+
+### 「108 将」实战分享
+
+<Route author="nczitzk" example="/jiazhen108" path="/jiazhen108" />
+
 ## 今日热榜
 
 ### 榜单
@@ -953,19 +995,27 @@ others = 热点新闻 + 滚动新闻
 
 ## 巨潮资讯
 
-<Route author="LogicJake hillerliao laampui" example="/cninfo/stock_announcement/szse/000002/gssz0000002/category_ndbg_szsh" path="/cninfo/announcement/:column/:code/:orgId/:category?" :paramsDesc="['szse 深圳证券交易所; sse 上海证券交易所; third 新三板; hke 港股; fund 基金', '股票或基金代码', 'orgId 组织 id', '公告分类，A 股及新三板']">
+<Route author="LogicJake hillerliao laampui nczitzk" example="/cninfo/announcement/szse/000002/gssz0000002/category_ndbg_szsh" path="/cninfo/announcement/:column/:code/:orgId/:category?/:search?" :paramsDesc="['szse 深圳证券交易所; sse 上海证券交易所; third 新三板; hke 港股; fund 基金', '股票或基金代码', 'orgId 组织 id', '公告分类，A 股及新三板，见下表，默认为全部', '标题关键字，默认为空']">
 
 column 为 szse 或 sse 时可选的 category:
 
-| 年报               | 半年报              | 一季报              | 三季报              | 业绩预告              | 权益分派               | 董事会              | 监事会              | 股东大会           | 日常经营           | 公司治理           | 中介报告         | 首发             | 增发             | 股权激励           | 配股             | 解禁             | 公司债             | 可转债             | 其他融资           | 股权变动           | 补充更正           | 澄清致歉           | 风险提示           | 特别处理和退市       | 退市整理期          |
-| ------------------ | ------------------- | ------------------- | ------------------- | --------------------- | ---------------------- | ------------------- | ------------------- | ------------------ | ------------------ | ------------------ | ---------------- | ---------------- | ---------------- | ------------------ | ---------------- | ---------------- | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | -------------------- | ------------------- |
-| category_ndbg_szsh | category_bndbg_szsh | category_yjdbg_szsh | category_sjdbg_szsh | category_yjygjxz_szsh | category_qyfpxzcs_szsh | category_dshgg_szsh | category_jshgg_szsh | category_gddh_szsh | category_rcjy_szsh | category_gszl_szsh | category_zj_szsh | category_sf_szsh | category_zf_szsh | category_gqjl_szsh | category_pg_szsh | category_jj_szsh | category_gszq_szsh | category_kzzq_szsh | category_qtrz_szsh | category_gqbd_szsh | category_bcgz_szsh | category_cqdq_szsh | category_fxts_szsh | category_tbclts_szsh | category_tszlq_szsh |
+| 全部 | 年报               | 半年报              | 一季报              | 三季报              | 业绩预告              | 权益分派               | 董事会              | 监事会              | 股东大会           | 日常经营           | 公司治理           | 中介报告         | 首发             | 增发             | 股权激励           | 配股             | 解禁             | 公司债             | 可转债             | 其他融资           | 股权变动           | 补充更正           | 澄清致歉           | 风险提示           | 特别处理和退市       | 退市整理期          |
+| ---- | ------------------ | ------------------- | ------------------- | ------------------- | --------------------- | ---------------------- | ------------------- | ------------------- | ------------------ | ------------------ | ------------------ | ---------------- | ---------------- | ---------------- | ------------------ | ---------------- | ---------------- | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | -------------------- | ------------------- |
+| all  | category_ndbg_szsh | category_bndbg_szsh | category_yjdbg_szsh | category_sjdbg_szsh | category_yjygjxz_szsh | category_qyfpxzcs_szsh | category_dshgg_szsh | category_jshgg_szsh | category_gddh_szsh | category_rcjy_szsh | category_gszl_szsh | category_zj_szsh | category_sf_szsh | category_zf_szsh | category_gqjl_szsh | category_pg_szsh | category_jj_szsh | category_gszq_szsh | category_kzzq_szsh | category_qtrz_szsh | category_gqbd_szsh | category_bcgz_szsh | category_cqdq_szsh | category_fxts_szsh | category_tbclts_szsh | category_tszlq_szsh |
 
 column 为 third 时可选的 category:
 
-| 临时公告      | 定期公告      | 中介机构公告  | 持续信息披露  | 首次信息披露  |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| category_lsgg | category_dqgg | category_zjjg | category_cxpl | category_scpl |
+| 全部 | 临时公告      | 定期公告      | 中介机构公告  | 持续信息披露  | 首次信息披露  |
+| ---- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| all  | category_lsgg | category_dqgg | category_zjjg | category_cxpl | category_scpl |
+
+::: tip 提示
+
+需要筛选多个 category 时，应使用 `;` 将多个字段连接起来。
+
+如 “年报 + 半年报” 即 `category_ndbg_szsh;category_bndbg_szsh`
+
+:::
 
 </Route>
 
@@ -1376,8 +1426,8 @@ column 为 third 时可选的 category:
 <Route author="HendricksZheng" example="/netease/dy/W4983108759592548559" path="/netease/dy/:id" :paramsDesc="['网易号 ID', '见如下说明']">
 
 1.  在[网易号搜索页面](https://dy.163.com/v2/media/tosearch.html) 搜索想要订阅的网易号。
-2.  打开网易号文章页面。
-3.  通过浏览器控制台执行 `$('#contain').dataset.wemediaid`，返回的即为网易号 ID。
+2.  打开网易号的任意文章。
+3.  查看源代码，搜索 `data-wemediaid`，查看紧随其后的引号内的属性值（类似 `W1966190042455428950`）即为网易号 ID。
 
 </Route>
 
@@ -1410,6 +1460,18 @@ column 为 third 时可选的 category:
 ### 中国大陆新闻动态
 
 <Route author="HenryQW" example="/wikipedia/mainland" path="/wikipedia/mainland"/>
+
+## 未名新闻
+
+### 分类
+
+<Route author="nczitzk" example="/mitbbs" path="/mitbbs/:caty?" :paramsDesc="['新闻分类，参见下表，默认为“新闻大杂烩”']">
+
+| 新闻大杂烩 | 军事     | 国际   | 体育 | 娱乐 | 科技 | 财经    |
+| ---------- | -------- | ------ | ---- | ---- | ---- | ------- |
+|            | zhongguo | haiwai | tiyu | yule | keji | caijing |
+
+</Route>
 
 ## 微信
 
