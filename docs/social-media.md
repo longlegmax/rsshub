@@ -594,6 +594,12 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 ### 频道
 
+::: tip 提示
+
+YouTube 官方亦有提供频道 RSS，形如 <https://www.youtube.com/feeds/videos.xml?channel_id=UCDwDMPOZfxVV0x_dz0eQ8KQ>。
+
+:::
+
 <Route author="DIYgod" example="/youtube/channel/UCDwDMPOZfxVV0x_dz0eQ8KQ" path="/youtube/channel/:id/:disableEmbed?" :paramsDesc="['频道 id', '默认为开启内嵌视频, 任意值为关闭']" radar="1" rssbud="1"/>
 
 ### 播放列表
@@ -993,7 +999,7 @@ rule
 
 ### 博主
 
-<Route author="DIYgod iplusx" example="/weibo/user/1195230310" path="/weibo/user/:uid/:routeParams?" :paramsDesc="['用户 id, 博主主页打开控制台执行 `$CONFIG.oid` 获取', '额外参数；请参阅上面的说明和表格；特别地，当 `routeParams=1` 时开启微博视频显示']" anticrawler="1" radar="1">
+<Route author="DIYgod iplusx" example="/weibo/user/1195230310" path="/weibo/user/:uid/:routeParams?" :paramsDesc="['用户 id, 博主主页打开控制台执行 `$CONFIG.oid` 获取', '额外参数；请参阅上面的说明和表格；特别地，当 `routeParams=1` 时开启微博视频显示']" anticrawler="1" radar="1" rssbud="1">
 
 部分博主仅登录可见，不支持订阅，可以通过打开 `https://m.weibo.cn/u/:uid` 验证
 
@@ -1094,7 +1100,7 @@ rule
 
 ### 收藏夹
 
-<Route author="huruji" example="/zhihu/collection/26444956" path="/zhihu/collection/:id" :paramsDesc="['收藏夹 id, 可在收藏夹页面 URL 中找到']" anticrawler="1" radar="1" rssbud="1"/>
+<Route author="huruji Colin-XKL" example="/zhihu/collection/26444956" path="/zhihu/collection/:id" :paramsDesc="['收藏夹 id, 可在收藏夹页面 URL 中找到']" anticrawler="1" radar="1" rssbud="1"/>
 
 ### 用户动态
 

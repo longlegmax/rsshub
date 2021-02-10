@@ -421,6 +421,8 @@ See the relation between access key/code and white/blacklisting.
 
 `REQUEST_RETRY`: retries allowed for failed requests, default to `2`
 
+`REQUEST_TIMEOUT`: milliseconds to wait for the server to end the response before aborting the request with error, default to `3000`
+
 `DEBUG_INFO`: display route information on homepage for debugging purpose. When set to neither `true` nor `false`, use parameter `debug` to enable display, eg: <https://rsshub.app/?debug=value_of_DEBUG_INFO> . Default to `true`
 
 `NODE_ENV`: display error message on pages for authentication failing, default to `production` (i.e. no display)
@@ -432,6 +434,8 @@ See the relation between access key/code and white/blacklisting.
 `PUPPETEER_WS_ENDPOINT`: Browser websocket endpoint which can be used as an argument to puppeteer.connect, refer to [browserWSEndpoint](https://pptr.dev/#?product=Puppeteer&version=v1.14.0&show=api-browserwsendpoint)
 
 `SENTRY`: [Sentry](https://sentry.io) dsn, used for error tracking
+
+`SENTRY_ROUTE_TIMEOUT`: Report Sentry if route execution takes more than this milliseconds, default to `3000`
 
 `DISALLOW_ROBOT`: prevent indexing by search engine, default to enable, set false or 0 to disable
 

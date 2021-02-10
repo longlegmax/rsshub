@@ -96,7 +96,10 @@
                 docs: 'https://docs.rsshub.app/social-media.html#wei-bo',
                 source: ['/u/:id', '/:id'],
                 target: (params, url, document) => {
-                    const uid = document && document.documentElement.innerHTML.match(/\$CONFIG\['oid']='(\d+)'/)[1];
+                    let uid = document?.documentElement.innerHTML.match(/\$CONFIG\['oid']='(\d+)'/)?.[1];
+                    if (!uid && !isNaN(params.id)) {
+                        uid = params.id;
+                    }
                     return uid ? `/weibo/user/${uid}` : '';
                 },
             },
@@ -117,6 +120,17 @@
                 docs: 'https://docs.rsshub.app/social-media.html#wei-bo',
                 source: '/top/summary',
                 target: '/weibo/search/hot',
+            },
+        ],
+    },
+    'weibo.cn': {
+        _name: '微博',
+        m: [
+            {
+                title: '博主',
+                docs: 'https://docs.rsshub.app/social-media.html#wei-bo',
+                source: ['/u/:uid', '/profile/:uid'],
+                target: '/weibo/user/:uid',
             },
         ],
     },
