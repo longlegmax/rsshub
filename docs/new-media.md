@@ -1752,6 +1752,18 @@ others = 热点新闻 + 滚动新闻
 
 <Route author="nczitzk" example="/mathunion/fields-medal" path="/mathunion/fields-medal"/>
 
+## 国家高端智库 / 综合开发研究院
+
+### 栏目
+
+<Route author="nczitzk" example="/cdi" path="/cdi/:id?" :paramsDesc="['分类，见下表，默认为综研国策']">
+
+| 樊纲观点 | 综研国策 | 综研观察 | 综研专访 | 综研视点 | 银湖新能源 |
+| -------- | -------- | -------- | -------- | -------- | ---------- |
+| 102      | 152      | 150      | 153      | 154      | 151        |
+
+</Route>
+
 ## 果壳网
 
 ### 科学人
@@ -2551,6 +2563,22 @@ column 为 third 时可选的 category:
 
 </Route>
 
+## 全国港澳研究会
+
+### 分类
+
+<Route author="nczitzk" example="/cahkms" path="/cahkms/:category?" :paramsDesc="['分类，见下表，默认为重要新闻']">
+
+| 关于我们 | 港澳新闻 | 重要新闻 | 顾问点评、会员观点 | 专题汇总 |
+| -------- | -------- | -------- | ------------------ | -------- |
+| 01       | 02       | 03       | 04                 | 05       |
+
+| 港澳时评 | 图片新闻 | 视频中心 | 港澳研究 | 最新书讯 | 研究资讯 |
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| 06       | 07       | 08       | 09       | 10       | 11       |
+
+</Route>
+
 ## 全民健康网
 
 <Route author="nczitzk" example="/qm120/news" path="/qm120/news/:category?" :paramsDesc="['分类，见下表，默认为健康焦点']">
@@ -3156,6 +3184,56 @@ column 为 third 时可选的 category:
 ### 文件列表
 
 <Route author="nczitzk" example="/watchout" path="/watchout"/>
+
+## 乌有之乡
+
+### 栏目
+
+<Route author="nczitzk" example="/wyzxwk/article/shushe" path="/wyzxwk/article/:id?" :paramsDesc="['栏目 id，可在栏目页 URL 中找到，默认为时代观察']">
+
+时政
+
+| 时代观察 | 舆论战争 |
+| -------- | -------- |
+| shidai   | yulun    |
+
+经济
+
+| 经济视点 | 社会民生 | 三农关注 | 产业研究 |
+| -------- | -------- | -------- | -------- |
+| jingji   | shehui   | sannong  | chanye   |
+
+国际
+
+| 国际纵横 | 国防外交 |
+| -------- | -------- |
+| guoji    | guofang  |
+
+思潮
+
+| 理想之旅 | 思潮碰撞 | 文艺新生 | 读书交流 |
+| -------- | -------- | -------- | -------- |
+| lixiang  | sichao   | wenyi    | shushe   |
+
+历史
+
+| 历史视野 | 中华文化 | 中华医药 | 共产党人 |
+| -------- | -------- | -------- | -------- |
+| lishi    | zhonghua | zhongyi  | cpers    |
+
+争鸣
+
+| 风华正茂 | 工农之声 | 网友杂谈 | 网友时评 |
+| -------- | -------- | -------- | -------- |
+| qingnian | gongnong | zatan    | shiping  |
+
+活动
+
+| 乌有公告 | 红色旅游 | 乌有讲堂  | 书画欣赏 |
+| -------- | -------- | --------- | -------- |
+| gonggao  | lvyou    | jiangtang | shuhua   |
+
+</Route>
 
 ## 无产者评论
 
