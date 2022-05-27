@@ -521,13 +521,29 @@ See the relation between access key/code and white/blacklisting.
 
 `SENTRY_ROUTE_TIMEOUT`: Report Sentry if route execution takes more than this milliseconds, default to `3000`
 
+### Image Processing
+
+`HOTLINK_TEMPLATE`: replace image URL in the description to avoid anti-hotlink protection, leave it blank to disable this function. Usage reference [#2769](https://github.com/DIYgod/RSSHub/issues/2769). You may use any property listed in [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties), format of JS template literal. e.g. `${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
+
+`HOTLINK_INCLUDE_PATHS`: limit the routes to be processed, only matched routes will be processed. Set multiple values with comma `,` as delimiter. If not set, all routes will be processed
+
+`HOTLINK_EXCLUDE_PATHS`: exclude routes that do not need to be processed, all matched routes will be ignored. Set multiple values with comma `,` as delimiter. Can be used alone, or to exclude routes that are already included by `HOTLINK_INCLUDE_PATHS`. If not set, no routes will be ignored
+
+::: tip Route matching pattern
+
+`HOTLINK_INCLUDE_PATHS` and `HOTLINK_EXCLUDE_PATHS` match the root path and all recursive sub-paths of the route, but not substrings. Note that the path must start with `/` and end without `/`.
+
+e.g. `/example`, `/example/sub` and `/example/anthoer/sub/route` will be matched by `/example`, but `/example_route` will not be matched.
+
+It is also valid to contain route parameters, e.g. `/weibo/user/2612249974`.
+
+:::
+
 ### Other Application Configurations
 
 `DISALLOW_ROBOT`: prevent indexing by search engine, default to enable, set false or 0 to disable
 
 `ENABLE_CLUSTER`: enable cluster mode, default to `false`
-
-`HOTLINK_TEMPLATE`: replace image link in the description to avoid anti-hotlink protection, leave blank to disable this function. Usage reference [#2769](https://github.com/DIYgod/RSSHub/issues/2769). You may use any property listed in [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties), format of JS template literal. e.g. `${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
 
 `NODE_ENV`: display error message on pages for authentication failing, default to `production` (i.e. no display)
 
@@ -627,20 +643,20 @@ See docs of the specified route and `lib/config.js` for detailed information.
 
     -   `SCIHUB_HOST`: The Sci-hub mirror address that is accessible from your location, default to `https://sci-hub.se`.
 
--   spotify: [API key registration](https://developer.spotify.com)
+-   Spotify: [API key registration](https://developer.spotify.com)
 
-    -   `SPOTIFY_CLIENT_ID`：Client ID of the application
-    -   `SPOTIFY_CLIENT_SECRET`：Client secret of the application
+    -   `SPOTIFY_CLIENT_ID`: Client ID of the application
+    -   `SPOTIFY_CLIENT_SECRET`: Client secret of the application
 
--   spotify (user data related routes):
+-   Spotify (user data related routes):
 
-    -   `SPOTIFY_REFRESHTOKEN`：The refresh token of the user from the Spotify application. Check [this gist](https://gist.github.com/outloudvi/d1bbeb5e989db5385384a223a7263744) for detailed information.
+    -   `SPOTIFY_REFRESHTOKEN`: The refresh token of the user from the Spotify application. Check [this gist](https://gist.github.com/outloudvi/d1bbeb5e989db5385384a223a7263744) for detailed information.
 
--   telegram: [Bot application](https://telegram.org/blog/bot-revolution)
+-   Telegram: [Bot application](https://telegram.org/blog/bot-revolution)
 
     -   `TELEGRAM_TOKEN`: Telegram bot token
 
--   twitter: [Application creation](https://apps.twitter.com)
+-   Twitter: [Application creation](https://apps.twitter.com)
 
     - `TWITTER_CONSUMER_KEY`: Twitter Developer API key, support multiple keys, split them with `,`
     - `TWITTER_CONSUMER_SECRET`: Twitter Developer API key secret, support multiple keys, split them with `,`
@@ -659,6 +675,11 @@ See docs of the specified route and `lib/config.js` for detailed information.
         | https://cors.netnr.workers.dev/        | cloudflare   |
         | https://netnr-proxy.openode.io/        | digitalocean |
 
--   youtube: [API Key application](https://console.developers.google.com/)
+-   YouTube: [API Key application](https://console.developers.google.com/)
 
-    -   `YOUTUBE_KEY`: YouTube API Key, support multiple keys, split them with `,`
+    -   All routes:
+        -   `YOUTUBE_KEY`: YouTube API Key, support multiple keys, split them with `,`
+    -   Extra requirements for subscriptions route:
+        -   `YOUTUBE_CLIENT_ID`: YouTube API OAuth 2.0 client ID
+        -   `YOUTUBE_CLIENT_SECRET`: YouTube API OAuth 2.0 client secret
+        -   `YOUTUBE_REFRESH_TOKEN`: YouTube API OAuth 2.0 refresh token. Check [this gist](https://gist.github.com/Kurukshetran/5904e8cb2361623498481f4a9a1338aa) for detailed instructions.

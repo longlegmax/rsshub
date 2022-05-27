@@ -527,13 +527,29 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 
 `SENTRY_ROUTE_TIMEOUT`: 路由耗时超过此毫秒值上报 Sentry，默认 `3000`
 
+### 图片处理
+
+`HOTLINK_TEMPLATE`: 用于处理描述中图片的 URL，绕过防盗链等限制，留空不生效。用法参考 [#2769](https://github.com/DIYgod/RSSHub/issues/2769)。可以使用 [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties) 的所有属性，格式为 JS 变量模板。例子：`${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
+
+`HOTLINK_INCLUDE_PATHS`: 限制需要处理的路由，只有匹配成功的路由会被处理，设置多项时用英文逗号 `,` 隔开。若不设置，则所有路由都将被处理
+
+`HOTLINK_EXCLUDE_PATHS`: 排除不需处理的路由，所有匹配成功的路由都不被处理，设置多项时用英文逗号 `,` 隔开。可单独使用，也可用于排除已被前者包含的路由。若不设置，则没有任何路由会被过滤
+
+::: tip 路由匹配模式
+
+`HOTLINK_INCLUDE_PATHS` 和 `HOTLINK_EXCLUDE_PATHS` 均匹配路由根路径及其所有递归子路径，但并非子字符串匹配。注意必须以 `/` 开头，且结尾不需要 `/`。
+
+例：`/example`, `/example/sub` 和 `/example/anthoer/sub/route` 均可被 `/example` 匹配，但 `/example_route` 不会被匹配。
+
+也可带有路由参数，如 `/weibo/user/2612249974` 也是合法的。
+
+:::
+
 ### 其他应用配置
 
 `DISALLOW_ROBOT`: 阻止搜索引擎收录，默认开启，设置 false 或 0 关闭
 
 `ENABLE_CLUSTER`: 是否开启集群模式，默认 `false`
-
-`HOTLINK_TEMPLATE`: 用于处理描述中图片的链接，绕过防盗链等限制，留空不生效。用法参考 [#2769](https://github.com/DIYgod/RSSHub/issues/2769)。可以使用 [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties) 的所有属性，格式为 JS 变量模板。例子：`${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
 
 `NODE_ENV`: 是否显示错误输出，默认 `production` （即关闭输出）
 
@@ -615,7 +631,7 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 
     -   `GOOGLE_FONTS_API_KEY`: API key
 
--   Instagram：
+-   Instagram:
 
     -   `IG_USERNAME`: Instagram 用户名。
     -   `IG_PASSWORD`: Instagram 密码。
@@ -643,10 +659,14 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
     -   `NGA_PASSPORT_UID`: 对应 cookie 中的 `ngaPassportUid`.
     -   `NGA_PASSPORT_CID`: 对应 cookie 中的 `ngaPassportCid`.
 
--   nhentai torrent: [注册地址](https://nhentai.net/register/)
+-   nhentai torrent：[注册地址](https://nhentai.net/register/)
 
     -   `NHENTAI_USERNAME`: nhentai 用户名或邮箱
     -   `NHENTAI_PASSWORD`: nhentai 密码
+
+-   pianyuan 全部路由：[注册地址](https://pianyuan.org)
+
+    -   `PIANYUAN_COOKIE`: 对应 cookie 中的 `py_loginauth`, 例: PIANYUAN_COOKIE='py_loginauth=xxxxxxxxxx'
 
 -   pixiv 全部路由：[注册地址](https://accounts.pixiv.net/signup)
 
@@ -664,20 +684,20 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 
     -   `SCIHUB_HOST`: 可访问的 sci-hub 镜像地址，默认为 `https://sci-hub.se`。
 
--   spotify 全部路由： [注册地址](https://developer.spotify.com)
+-   Spotify 全部路由：[注册地址](https://developer.spotify.com)
 
-    -   `SPOTIFY_CLIENT_ID`：Spotify 应用的 client ID
-    -   `SPOTIFY_CLIENT_SECRET`：Spotify 应用的 client secret
+    -   `SPOTIFY_CLIENT_ID`: Spotify 应用的 client ID
+    -   `SPOTIFY_CLIENT_SECRET`: Spotify 应用的 client secret
 
--   spotify 用户相关路由
+-   Spotify 用户相关路由
 
     -   `SPOTIFY_REFRESHTOKEN`：用户在此 Spotify 应用的 refresh token。可以利用 [此 gist](https://gist.github.com/outloudvi/d1bbeb5e989db5385384a223a7263744) 获取。
 
--   telegram - 贴纸包路由：[Telegram 机器人](https://telegram.org/blog/bot-revolution)
+-   Telegram - 贴纸包路由：[Telegram 机器人](https://telegram.org/blog/bot-revolution)
 
     -   `TELEGRAM_TOKEN`: Telegram 机器人 token
 
--   twitter 全部路由：[申请地址](https://apps.twitter.com)
+-   Twitter 全部路由：[申请地址](https://apps.twitter.com)
 
     -   `TWITTER_CONSUMER_KEY`: Twitter Developer API key，支持多个 key，用英文逗号 `,` 隔开
     -   `TWITTER_CONSUMER_SECRET`: Twitter Developer API key secret，支持多个 key，用英文逗号 `,` 隔开，顺序与 key 对应
@@ -696,9 +716,14 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
         | <https://cors.netnr.workers.dev/>        | cloudflare   |
         | <https://netnr-proxy.openode.io/>        | digitalocean |
 
--   youtube 全部路由：[申请地址](https://console.developers.google.com/)
+-   YouTube：[申请地址](https://console.developers.google.com/)
 
-    -   `YOUTUBE_KEY`: YouTube API Key，支持多个 key，用英文逗号 `,` 隔开
+    -   全部路由
+        -   `YOUTUBE_KEY`: YouTube API Key，支持多个 key，用英文逗号 `,` 隔开
+    -   订阅列表路由额外设置
+        -   `YOUTUBE_CLIENT_ID`: YouTube API 的 OAuth 2.0 客户端 ID
+        -   `YOUTUBE_CLIENT_SECRET`: YouTube API 的 OAuth 2.0 客户端 Secret
+        -   `YOUTUBE_REFRESH_TOKEN`: YouTube API 的 OAuth 2.0 客户端 Refresh Token。可以按照[此 gist](https://gist.github.com/Kurukshetran/5904e8cb2361623498481f4a9a1338aa) 获取。
 
 -   北大未名 BBS 全站十大
 
