@@ -485,9 +485,8 @@
             },
         ],
     },
-    'apnews.com': { _name: 'AP News', '.': [{ title: '话题', docs: 'https://docs.rsshub.app/traditional-media.html#ap-news', source: '/:topic', target: '/apnews/topics/:topic' }] },
-    'biquge5200.com': { www: [{ title: 'biquge5200.com', docs: 'https://docs.rsshub.app/reading.html#bi-qu-ge-biquge5200-com', source: '/:id', target: '/novel/biquge/:id' }] },
-    'biquge.info': { www: [{ title: 'biquge.info', docs: 'https://docs.rsshub.app/reading.html#bi-qu-ge-biquge-info', source: '/:id', target: '/novel/biqugeinfo/:id' }] },
+    // 'biquge5200.com': { www: [{ title: 'biquge5200.com', docs: 'https://docs.rsshub.app/reading.html#bi-qu-ge-biquge5200-com', source: '/:id', target: '/novel/biquge/:id' }] },
+    // 'biquge.info': { www: [{ title: 'biquge.info', docs: 'https://docs.rsshub.app/reading.html#bi-qu-ge-biquge-info', source: '/:id', target: '/novel/biqugeinfo/:id' }] },
     'matters.news': {
         _name: 'Matters',
         '.': [
@@ -810,13 +809,6 @@
             },
         ],
     },
-    'acfun.cn': {
-        _name: 'AcFun',
-        www: [
-            { tilte: '番剧', docs: 'https://docs.rsshub.app/anime.html#acfun-fan-ju', source: '/bangumi/:id', target: (params) => `/acfun/bangumi/${params.id.replace('aa', '')}` },
-            { title: '用户投稿', docs: 'https://docs.rsshub.app/anime.html#acfun-yong-hu-tou-gao', source: '/u/:id', target: '/acfun/user/video/:id' },
-        ],
-    },
     'jjmhw.cc': { _name: '漫小肆', www: [{ title: '漫画更新', docs: 'https://docs.rsshub.app/anime.html#man-xiao-si', source: '/book/:id', target: '/manxiaosi/book/:id' }] },
     'wenxuecity.com': {
         _name: '文学城',
@@ -976,15 +968,6 @@
             { title: '日记评论区', docs: 'https://docs.rsshub.app/social-media.html#fur-affinity', source: '/journal/:id/', target: '/furaffinity/journal_comments/:id' },
         ],
     },
-    'gcores.com': {
-        _name: '机核网',
-        www: [
-            { title: '资讯', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/news', target: '/gcores/category/news' },
-            { title: '视频', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/videos', target: '/gcores/category/videos' },
-            { title: '电台', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/radios', target: '/gcores/category/radios' },
-            { title: '文章', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/articles', target: '/gcores/category/articles' },
-        ],
-    },
     'bgm.tv': {
         _name: 'Bangumi',
         '.': [
@@ -1026,7 +1009,7 @@
         mob: [{ title: '分区', docs: 'https://docs.rsshub.app/game.html#lv-fa-shi-ying-di', source: '/fine/:tag', target: '/lfsyd/tag/:tag' }],
     },
     'macwk.com': { _name: 'MacWk', '.': [{ title: '应用更新', docs: 'https://docs.rsshub.app/program-update.html#macwk', source: '/soft/:name', target: '/macwk/soft/:name' }] },
-    'zyshow.net': { www: [{ title: '', docs: 'https://docs.rsshub.app/game.html#lv-fa-shi-ying-di', source: '/:name/', target: '/zyshow/:name' }] },
+    // 'zyshow.net': { www: [{ title: '', docs: 'https://docs.rsshub.app/game.html#lv-fa-shi-ying-di', source: '/:name/', target: '/zyshow/:name' }] },
     'foreverblog.cn': {
         _name: 'foreverblog',
         www: [

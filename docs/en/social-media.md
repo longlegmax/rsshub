@@ -42,8 +42,8 @@ pageClass: routes
 
 Type
 
-| artwork | crafts | music | writing | 
-| ---- | ---- | ---- | ---- | 
+| artwork | crafts | music | writing |
+| ---- | ---- | ---- | ---- |
 | artwork | crafts | music | writing |
 
 </RouteEn>
@@ -72,7 +72,7 @@ Type
 
 <RouteEn author="TigerCubDen" example="/furaffinity/watchers/malikshadowclaw" path="/furaffinity/watchers/:username" :paramsDesc="['Username, can find in userpage']" radar="1"/>
 
-### User's Commission Information 
+### User's Commission Information
 
 <RouteEn author="TigerCubDen" example="/furaffinity/commissions/flashlioness" path="/furaffinity/commissions/:username" :paramsDesc="['Username, can find in userpage']" radar="1"/>
 
@@ -300,6 +300,12 @@ Due to Telegram restrictions, some channels involving pornography, copyright, an
 
 <RouteEn author="fengkx" example="/telegram/blog" path="/telegram/blog" />
 
+## TikTok
+
+### User
+
+<RouteEn author="TonyRL" example="/tiktok/user/@linustech" path="/tiktok/user/:user" :paramsDesc="['User ID, including @']" anticrawler="1" puppeteer="1" radar="1" rssbud="1"/>
+
 ## Twitter
 
 ::: warning
@@ -353,7 +359,7 @@ generates
 
 <RouteEn author="yindaheng98 Rongronggg9" path="/twitter/media/:id/:routeParams?" example="/twitter/media/DIYgod" :paramsDesc="['user id', 'extra parameters, see the table above.']" radar="1" rssbud="1"/>
 
-## User following timeline
+### User following timeline
 
 <RouteEn author="DIYgod" example="/twitter/followings/DIYgod" path="/twitter/followings/:id/:routeParams?" :paramsDesc="['user id', 'extra parameters, see the table above']" radar="1" rssbud="1" selfhost="1">
 

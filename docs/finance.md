@@ -58,6 +58,12 @@ pageClass: routes
 
 ## TokenInsight
 
+::: tip 提示
+
+TokenInsight 官方亦有提供 RSS，可参考 <https://api.tokeninsight.com/reference/rss>。
+
+:::
+
 ### 博客
 
 <Route author="fuergaosi233" example="/tokeninsight/blog" path="/tokeninsight/blog/:lang?" :paramsDesc="['语言，见下表，默认为简体中文']" />
@@ -152,6 +158,12 @@ pageClass: routes
 
 </Route>
 
+## 第一财经杂志
+
+### 首页
+
+<Route author="nczitzk" example="/cbnweek" path="/cbnweek"/>
+
 ## 东方财富
 
 ### 天天基金用户动态
@@ -193,6 +205,13 @@ pageClass: routes
 ## 金十数据
 
 <Route author="laampui" example="/jinshi/index" path="/jinshi/index" />
+
+## 老虎社区
+
+### 个人主页
+
+<Route author="Fatpandac" example="/laohu8/personal/3527667596890271" path="/laohu8/personal/:id" :paramsDesc="['用户 ID，见网址链接']" rssbud="1" radar="1"/>
+
 ## 麦肯锡中国
 
 <Route author="laampui" example="/mckinsey/autos" path="/mckinsey/:category?" :paramsDesc="['默认为全部，见下表']">
@@ -403,6 +422,10 @@ pageClass: routes
 ### 用户自选动态
 
 <Route author="hillerliao" example="/xueqiu/user_stock/1247347556" path="/xueqiu/user_stock/:id" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']"/>
+
+### 用户专栏
+
+<Route author="TonyRL" example="/xueqiu/column/9962554712" path="/xueqiu/column/:id" :paramsDesc="['用户 id, 可在用户主页 URL 中找到']" radar="1" rssbud="1"/>
 
 ### 蛋卷基金净值更新
 
