@@ -1233,22 +1233,32 @@ category 列表：
 
 ## 哈尔滨工业大学
 
-### 哈尔滨工业大学教务处通知公告
+::: warning 注意
+哈工大网站疑似禁止了`rsshub.app`的访问，使用路由需要自行 [部署](https://docs.rsshub.app/install)。
+:::
 
-<Route author="lty96117" example="/hit/jwc" path="/hit/jwc"/>
+### 教务处通知公告
+
+<Route author="lty96117" example="/hit/jwc" path="/hit/jwc" radar="1" rssbud="1"/>
 
 ### 今日哈工大
 
-<Route author="ranpox" example="/hit/today/10" path="/hit/today/:category" :paramsDesc="['分类编号，`10`为公告公示，`11`为新闻快讯，同时支持详细分类，使用方法见下']"/>
+<Route author="ranpox" example="/hit/today/10" path="/hit/today/:category" :paramsDesc="['分类编号，`10`为公告公示，`11`为新闻快讯，同时支持详细分类，使用方法见下']" radar="1" rssbud="1">
 
 ::: tip 提示
 今日哈工大的文章分为公告公示和新闻快讯，每个页面右侧列出了更详细的分类，其编号为每个 URL 路径的最后一个数字。
-例如会议讲座的路径为`/taxonomy/term/10/25`，则可以通过`/hit/today/25`订阅该详细类别。
+例如会议讲座的路径为`/taxonomy/term/10/25`，则可以通过 [`/hit/today/25`](https://rsshub.app/hit/today/25) 订阅该详细类别。
 :::
 
 ::: warning 注意
 部分文章需要经过统一身份认证后才能阅读全文。
 :::
+
+</Route>
+
+### 研究生院通知公告
+
+<Route author="hlmu" example="/hit/hitgs" path="/hit/hitgs" radar="1" rssbud="1"/>
 
 ## 哈尔滨工业大学（深圳）
 
@@ -1266,13 +1276,13 @@ category 列表：
 
 ### 今日工大 - 通知公告
 
-<Route author="raptazure" example="/hitwh/today" path="hitwh/today" />
+<Route author="raptazure" example="/hitwh/today" path="/hitwh/today" radar="1" rssbud="1"/>
 
 ## 海南大学
 
 ### 硕士研究生招生动态
 
-<Route author="OdinZhang" example="/hainanu/ssszs" path="hainanu/ssszs"/>
+<Route author="OdinZhang" example="/hainanu/ssszs" path="/hainanu/ssszs"/>
 
 ## 杭州电子科技大学
 
@@ -2106,14 +2116,16 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ### 设计学院
 
-<Route author="evnydd0sf" example="/nua/dc/346" path="/nua/dc/:type" :paramsDesc="['新闻模块，见下表']" radar="1">
+<Route author="evnydd0sf" example="/nua/dc/news" path="/nua/dc/:type" :paramsDesc="['新闻模块，见下表']" radar="1">
 
-| 新闻模块       | 参数      |
-| ---------- | ------- |
-| 学院新闻 NEWS  | news    |
-| 教学 TEACH   | teach   |
-| 项目 PROJECT | project |
-| 党团 PARTY   | party   |
+| 新闻模块                   | 参数         |
+| ---------------------- | ---------- |
+| 学院新闻 NEWS              | news       |
+| 展览 EXHIBITION          | exhibition |
+| 研创 RESEARCH & CREATION | rc         |
+| 项目 PROJECT             | project    |
+| 党团 PARTY               | party      |
+| 后浪 YOUTH               | youth      |
 
 </Route>
 
@@ -2121,12 +2133,11 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 <Route author="evnydd0sf" example="/nua/gra/1959" path="/nua/gra/:type" :paramsDesc="['新闻模块，见下表']" radar="1">
 
-| 新闻模块  | 参数   |
-| ----- | ---- |
-| 招生工作  | 1959 |
-| 培养工作  | 1962 |
-| 学位工作  | 1958 |
-| 思政与管理 | 1960 |
+| 新闻模块 | 参数   |
+| ---- | ---- |
+| 招生工作 | 1959 |
+| 培养工作 | 1962 |
+| 学位工作 | 1958 |
 
 </Route>
 
@@ -2979,6 +2990,26 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 </Route>
 
+### 财经学院
+
+<Route author="RiverTwilight" example="/swpu/cjxy/xyxw" path="/swpu/cjxy/:code" :paramsDesc="['栏目代码']">
+
+| 栏目 | 学院新闻 | 学院通知 |
+| -- | ---- | ---- |
+| 代码 | xyxw | xytz |
+
+</Route>
+
+### 信息学院
+
+<Route author="RiverTwilight" example="/swpu/is/xyxw" path="/swpu/is/:code" :paramsDesc="['栏目代码']">
+
+| 栏目 | 学院新闻 | 通知公告 | 教育教学 | 学生工作 | 招生就业 |
+| -- | ---- | ---- | ---- | ---- | ---- |
+| 代码 | xyxw | tzgg | jyjx | xsgz | zsjy |
+
+</Route>
+
 ## 信阳师范学院
 
 ### 高等教育自学考试办公室
@@ -3219,7 +3250,7 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ### 中国传媒大学研究生招生网
 
-<Route author="YunYouJun" example="/cuc/yz" path="/cuc/yz" />
+<Route author="YunYouJun niuyi1017" example="/cuc/yz" path="/cuc/yz" />
 
 ## 中国地质大学 (武汉)
 
