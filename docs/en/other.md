@@ -126,6 +126,18 @@ Official Website: <https://news.yahoo.co.jp/pages/article/20200207>
 
 <RouteEn author="LogicJake" example="/instapaper/person/viridiano" path="/instapaper/person"/>
 
+## Instructables
+
+### Projects
+
+<RouteEn author="wolfg1969" example="/instructables/projects/circuits" path="/instructables/projects/:category?" :paramsDesc="['Category, empty by default, can be found in URL or see the table below']" radar="1">
+
+| All | Circuits | Workshop | Craft | Cooking | Living | Outside | Teachers |
+| --- | -------- | -------- | ----- | ------- | ------ | ------- | -------- |
+|     | circuits | workshop | craft | cooking | living | outside | teachers |
+
+</RouteEn>
+
 ## Japanpost
 
 ### Track & Trace Service
@@ -213,6 +225,12 @@ For example:
 | physics | chemistry | physiology-or-medicine | literature | peace | economic-sciences |
 
 </RouteEn>
+
+## oshwhub
+
+### OpenSource Square
+
+<RouteEn author="tylinux" example="/oshwhub" path="/oshwhub/:sortType?" :paramsDesc="['sortType']" radar="1" rssbud="1"/>
 
 ## Panda
 
