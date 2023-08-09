@@ -242,6 +242,36 @@ Support all channels, refer to [CNBC RSS feeds](https://www.cnbc.com/rss-feeds/)
 
 </RouteEn>
 
+## DNA India
+
+### News
+
+<RouteEn auther="Rjnishant530" example="/dnaindia/headlines" path="/dnaindia/:category" :paramsDesc="['Find it in the URL, or tables below']" radar="1">
+
+Categories:
+
+| Headlines | Explainer | India | Entertainment | Sports | Viral | Lifestyle | Education | Business | World |
+| --------- | --------- | ----- | ------------- | ------ | ----- | --------- | --------- | -------- | ----- |
+| headlines | explainer | india | entertainment | sports | viral | lifestyle | education | business | world |
+
+</RouteEn>
+
+### Topic
+
+<RouteEn auther="Rjnishant530" example="/dnaindia/topic/dna-verified" path="/dnaindia/topic/:topic" :paramsDesc="['Find it in the URL']" radar="1">
+
+Topics:
+
+|DNA verified|
+|------------|
+|dna-verified|
+
+::: tip Topic
+See the URL for `https://www.dnaindia.com/topic/dna-verified` for the subdomain `topic`
+:::
+
+</RouteEn>
+
 ## Financial Times
 
 ### myFT personal RSS
@@ -355,6 +385,28 @@ Only `s00017` is in English.
 
 </RouteEn>
 
+## NPR
+
+### News
+
+<RouteEn author="bennyyip" example="/npr/1001" path="/npr/:endpoint?" :paramsDesc="['Channel ID, can be found in Official RSS URL, `1001` by default']">
+
+Provide full article RSS for CBC topics.
+
+</RouteEn>
+
+
+
+## Radio France
+
+### Géopolitique
+
+<RouteEn author="xdu" example="/radiofrance/geopolitique" path="/radiofrance/geopolitique">
+
+French podcast on the international politics. This feed provides a better reading experience (full text) for the 3 latest articles.
+
+</RouteEn>
+
 ## Radio Free Asia (RFA)
 
 ### News
@@ -380,12 +432,12 @@ Parameters can be obtained from the official website, for instance:
 
 ### Category/Topic/Author
 
-<RouteEn author="HenryQW proletarius101 LyleLee" example="/reuters/world/us" path="/reuters/:category/:topic?" :paramsDesc="['find it in the URL, or tables below', 'find it in the URL, or tables below']">
+<RouteEn author="HenryQW proletarius101 LyleLee nczitzk" example="/reuters/world/us" path="/reuters/:category/:topic?" :paramsDesc="['find it in the URL, or tables below', 'find it in the URL, or tables below']">
 
 -   `:category`:
-    | World | Business | Legal | Markets | Breakingviews | Technology |
-    | -------- | ------- | ----- | -------- | ------------- | ---------- |
-    | world | business | legal | markets | breakingviews | technology |
+    | World | Business | Legal | Markets | Breakingviews | Technology | Graphics |
+    | ----- | -------- | ----- | ------- | ------------- | ---------- | -------- |
+    | world | business | legal | markets | breakingviews | technology | graphics |
 
 -   `world/:topic`:
 
