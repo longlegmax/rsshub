@@ -91,6 +91,12 @@ See [#app-store-mac-app-store](/routes/program-update#app-store-mac-app-store)
   2.  Copy everything in the URL after `?`, for example: `https://www.autotrader.co.uk/car-search?radius=50&postcode=sw1a1aa&onesearchad=Used&onesearchad=Nearly%20New&onesearchad=New&price-to=9000&year-from=2012&body-type=Hatchback&transmission=Automatic&exclude-writeoff-categories=on` will produce `radius=50&postcode=sw1a1aa&onesearchad=Used&onesearchad=Nearly%20New&onesearchad=New&price-to=9000&year-from=2012&body-type=Hatchback&transmission=Automatic&exclude-writeoff-categories=on`
 </Route>
 
+## Bing {#bing}
+
+### 搜索 {#bing-sou-suo}
+
+<Route author="CaoMeiYouRen" example="/bing/search/rss" path="/bing/search/:keyword" paramsDesc={['搜索关键词']} radar="1" />
+
 ## BOOKWALKERTW {#bookwalkertw}
 
 ### 热门新书 {#bookwalkertw-re-men-xin-shu}
@@ -109,11 +115,13 @@ See [#app-store-mac-app-store](/routes/program-update#app-store-mac-app-store)
 
 <Route author="hoilc" example="/clickme/default/category/beauty" path="/clickme/:site/:grouping/:name" paramsDesc={['站点，`default`为普通站，`r18`为成人站，其它值默认为普通站','分组方式，`category`为分类，`tag`为标签，其他值默认为分类','分类名或标签名，分类名为英文，可以在分类 URL 中找到']} radar="1" anticrawler="1" />
 
-### South China Morning Post - China coronavirus outbreak {#clickme-south-china-morning-post-china-coronavirus-outbreak}
+## Corona Virus Disease 2019 {#corona-virus-disease-2019}
 
-<Route author="DIYgod" example="/coronavirus/scmp" path="/coronavirus/scmp" notOperational="1" />
+### South China Morning Post - China coronavirus outbreak {#corona-virus-disease-2019-south-china-morning-post-china-coronavirus-outbreak}
 
-### Macao Pagina Electrónica Especial Contra Epidemias: What’s New {#clickme-macao-pagina-electronica-especial-contra-epidemias-what-s-new}
+<Route author="DIYgod" example="/scmp/coronavirus" path="/scmp/coronavirus" />
+
+### Macao Pagina Electrónica Especial Contra Epidemias: What’s New {#corona-virus-disease-2019-macao-pagina-electronica-especial-contra-epidemias-what-s-new}
 
 Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx)
 
@@ -123,11 +131,11 @@ Official Website: [https://www.ssm.gov.mo/apps1/PreventWuhanInfection/en.aspx](h
 | ------- | ------- | ---------- |
 | ch      | en      | pt         |
 
-### Singapore Ministry of Health - Past Updates on 2019-nCov Local Situation in Singapore {#clickme-singapore-ministry-of-health-past-updates-on-2019-ncov-local-situation-in-singapore}
+### Singapore Ministry of Health - Past Updates on 2019-nCov Local Situation in Singapore {#corona-virus-disease-2019-singapore-ministry-of-health-past-updates-on-2019-ncov-local-situation-in-singapore}
 
 <Route author="Gnnng" example="/coronavirus/sg-moh" path="/coronavirus/sg-moh" notOperational="1" />
 
-### Yahoo Japan 新型コロナウイルス感染症まとめ {#clickme-yahoo-japan-xin-xing-%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9-gan-ran-zheng-%E3%81%BE%E3%81%A8%E3%82%81}
+### Yahoo Japan 新型コロナウイルス感染症まとめ {#corona-virus-disease-2019-yahoo-japan-xin-xing-%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9-gan-ran-zheng-%E3%81%BE%E3%81%A8%E3%82%81}
 
 Official Website: [https://news.yahoo.co.jp/pages/article/20200207](https://news.yahoo.co.jp/pages/article/20200207)
 
@@ -180,6 +188,10 @@ Official Website: [https://news.yahoo.co.jp/pages/article/20200207](https://news
 ### Alerts {#google-alerts}
 
 <Route author="TonyRL" example="/google/alerts/RSSHub" path="/google/alerts/:keyword" paramsDesc={['Keyword']} />
+
+### Search {#google-search}
+
+<Route author="CaoMeiYouRen" example="/google/search/rss/zh-CN,zh" path="/google/search/:keyword/:language?" paramsDesc={['Keyword','Accept-Language. Example: zh-CN,zh;q=0.9,en;q=0.8,ja;q=0.7']} />
 
 ## Grand-Challenge {#grand-challenge}
 
@@ -597,9 +609,13 @@ Specify options (in the format of query string) in parameter `routeParams` param
 
 <Route author="sanmmm" example="/afdian/dynamic/@afdian" path="/afdian/dynamic/:uid?" paramsDesc={['用户id，用户动态页面url里可找到']} />
 
-## 百度热搜 {#bai-du-re-sou}
+## 百度 {#bai-du}
 
-### 榜单 {#bai-du-re-sou-bang-dan}
+### 搜索 {#bai-du-sou-suo}
+
+<Route author="CaoMeiYouRen" example="/baidu/search/rss" path="/baidu/search/:keyword" paramsDesc={['搜索关键词']} radar="1" anticrawler="1" />
+
+### 热搜榜单 {#bai-du-re-sou-bang-dan}
 
 <Route author="xyqfer" example="/baidu/top" path="/baidu/top/:board?" paramsDesc={['榜单，默认为 `realtime`']} radar="1">
   | 热搜榜   | 小说榜 | 电影榜 | 电视剧榜 | 汽车榜 | 游戏榜 |
@@ -851,9 +867,13 @@ Specify options (in the format of query string) in parameter `routeParams` param
 
 ## 搜狗 {#sou-gou}
 
-### 搜狗特色 LOGO {#sou-gou-sou-gou-te-se-logo}
+### 特色 LOGO {#sou-gou-te-se-logo}
 
 <Route author="xyqfer" example="/sogou/doodles" path="/sogou/doodles" />
+
+### 搜索 {#sou-gou-sou-suo}
+
+<Route author="CaoMeiYouRen" example="/sogou/search/rss" path="/sogou/search/:keyword" paramsDesc={['搜索关键词']} radar="1" />
 
 ## 台灣事實查核中心 {#tai-wan-shi-shi-cha-he-zhong-xin}
 
@@ -1046,6 +1066,12 @@ Specify options (in the format of query string) in parameter `routeParams` param
   | ------ | ---------- | -------- | -------- | -------- | -------- | -------- | -------- |
   | short  | zs         | xh       | xc       | xhmr     | xhmc     | xcmr     | xcmc     |
 </Route>
+
+## 中华全国专利代理师协会 {#zhong-hua-quan-guo-zhuan-li-dai-li-shi-xie-hui}
+
+### 标签 {#zhong-hua-quan-guo-zhuan-li-dai-li-shi-xie-hui-biao-qian}
+
+<Route author="nczitzk" example="/acpaa" path="/acpaa/:id?/:name?" paramsDesc={['标签 id，默认为 1，可在对应标签页 URL 中找到', '标签名称，默认为重要通知，可在对应标签页 URL 中找到']} radar="1" />
 
 ## はてな {#%E3%81%AF%E3%81%A6%E3%81%AA}
 
